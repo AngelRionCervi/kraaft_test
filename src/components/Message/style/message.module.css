@@ -56,3 +56,8 @@
 .imageReply {
   border-top-right-radius: var(--MESSAGE_BORDER_RADIUS);
 }
+
+.taggedUsername {
+  cursor: pointer;
+  color: var(--MESSAGE_TAG);
+}

@@ -23,6 +23,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
     'import/prefer-default-export': 'off',
+    'import/no-cycle': 'off',
     'react/prop-types': 'off',
     'react/jsx-uses-react': 'off',
     'react/require-default-props': 'off',
@@ -33,5 +34,7 @@ module.exports = {
     'default-case': 'off',
     'consistent-return': 'off',
     'no-restricted-syntax': 'off',
+    'no-plusplus': 'off',
+    'no-cycle': 'off',
   },
 };

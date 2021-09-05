@@ -1,1 +1,4 @@
-export const FALLBACK_USERNAME = 'Unknown user';
+export const FALLBACKS = {
+  username: 'Unknown user',
+};
+export const MESSAGE_TAG_START = '@';

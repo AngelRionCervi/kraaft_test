@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import './app.css';
 import { store } from './assets/store';
 import { TextMessageProps } from './assets/types';
@@ -9,6 +10,8 @@ interface MessageInputProps {
 }
 
 const MessageInput = ({ handleAddTextMessage }: MessageInputProps) => {
+  const inputElem = useRef<HTMLInputElement>(null);
+
   const submitMessage = (evt: React.FormEvent<HTMLFormElement>): void => {
     evt.preventDefault();
     const message = new FormData(evt.target as HTMLFormElement).get(
@@ -17,19 +20,28 @@ const MessageInput = ({ handleAddTextMessage }: MessageInputProps) => {
     if (message) {
       handleAddTextMessage(message);
     }
+    if (inputElem?.current) inputElem.current.value = '';
   };
 
   return (
     <div className="messageInputContainer">
       <span className="messageInput">
-        <form id="messageForm" onSubmit={submitMessage}>
-          <input name="message" type="text" />
+        <form
+          className="messageForm"
+          id="message_form"
+          onSubmit={submitMessage}>
+          <input
+            ref={inputElem}
+            className="inputMessageForm"
+            name="message"
+            type="text"
+          />
         </form>
       </span>
       <button
         className="messageSendButton"
         type="submit"
-        form="messageForm"
+        form="message_form"
         tabIndex={0}>
         Envoyer
       </button>
@@ -49,6 +61,18 @@ const App = () => {
       content,
     };
     messageDispatch({ type: 'newMessage', payload: newMessagePayload });
+
+    // for fun
+    if (content === 'hey') {
+      const replyPayload = {
+        ...newMessagePayload,
+        senderId: store.users[2].id,
+        id: `newReply-${messages.length}`,
+      };
+      setTimeout(() => {
+        messageDispatch({ type: 'newMessage', payload: replyPayload });
+      }, 1000);
+    }
   };
 
   return (

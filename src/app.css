@@ -76,3 +76,14 @@ header {
   flex: 1;
   overflow: auto;
 }
+
+.inputMessageForm {
+  height: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+.messageForm {
+  height: 100%;
+  width: 100%;
+}
