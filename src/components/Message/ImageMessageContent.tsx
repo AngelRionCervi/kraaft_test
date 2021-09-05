@@ -9,7 +9,11 @@ export const ImageMessageContent = ({
 }: MessageContentProps & { message: ImageMessageProps }) => {
   return (
     <div className={classes.content}>
-      <img className={classes.image} src={message.url} alt={message.url} />
+      <img
+        className={classes.image}
+        src={message.url}
+        alt={`${message.caption}-url:${message.url}`}
+      />
       <p className={styles.messageText}>
         <TextFormatter>{message.caption}</TextFormatter>
       </p>

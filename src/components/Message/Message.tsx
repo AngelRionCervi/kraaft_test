@@ -5,7 +5,7 @@ import {
   TextMessageProps,
 } from '../../assets/types';
 import { FALLBACKS } from '../../constants';
-import { formatDate } from '../../lib';
+import { formatDateFromTimestamp } from '../../lib';
 import styles from './style/message.module.css';
 import { useCurrentUser, useUsers } from '../providers';
 import { TextMessageContent, ImageMessageContent } from '.';
@@ -44,7 +44,9 @@ export const Message = ({ message }: MessageComponentProps) => {
     <div className={classes.container}>
       <div className={styles.username}>{messageAuthor}</div>
       {contentMap[message.type]}
-      <div className={styles.createdDate}>{formatDate(message.createdAt)}</div>
+      <div className={styles.createdDate}>
+        {formatDateFromTimestamp(message.createdAt)}
+      </div>
     </div>
   );
 };

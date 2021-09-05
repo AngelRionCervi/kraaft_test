@@ -6,7 +6,7 @@ interface UsersProviderProps {
   children: ReactElement;
 }
 
-export const UsersContext = createContext<UserProps[] | null>(null);
+const UsersContext = createContext<UserProps[] | null>(null);
 
 export const useUsers = () => {
   const context = React.useContext(UsersContext);

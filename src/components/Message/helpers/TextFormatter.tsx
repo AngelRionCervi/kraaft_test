@@ -13,7 +13,7 @@ const formatTextWithTags = (text: string, usernamesOriginal: string[]) => {
 
   if (textWithTags.length === 1) return text;
 
-  const formattedTextWithTags = textWithTags.reduce(
+  return textWithTags.reduce(
     (textWithTagsAcc: (string | React.ReactElement)[], textSplit, index) => {
       const taggedUsername = usernames.find(
         (username) => textSplit.indexOf(username) === 0,
@@ -40,8 +40,6 @@ const formatTextWithTags = (text: string, usernamesOriginal: string[]) => {
     },
     [],
   );
-
-  return formattedTextWithTags;
 };
 
 export const TextFormatter = ({ children: text }: TextFormatterProps) => {

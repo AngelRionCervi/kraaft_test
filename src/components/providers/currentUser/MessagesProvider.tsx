@@ -6,7 +6,7 @@ interface CurrentUserProviderProps {
   children: ReactElement;
 }
 
-export const CurrentUserContext = createContext<UserProps | null>(null);
+const CurrentUserContext = createContext<UserProps | null>(null);
 
 export const useCurrentUser = () => {
   const context = React.useContext(CurrentUserContext);
