@@ -1,0 +1,73 @@
+:root {
+  --WHITE: #ffffff;
+  --BUTTON_BACKGROUND: #2d3436;
+  --TOOLBAR_BACKGROUND: #0984e3;
+  --MESSAGE_BACKGROUND_SELF: #55efc4;
+  --MESSAGE_BACKGROUND_REPLY: #dfe6e9;
+  --MESSAGE_TAG: #ff7675;
+  --MESSAGE_DATE: #636e72;
+}
+
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: var(--TOOLBAR_BACKGROUND);
+  height: 45px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #ecf0f1;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+footer {
+  background-color: var(--TOOLBAR_BACKGROUND);
+  height: 45px;
+
+  display: flex;
+  padding: 16px;
+  align-items: center;
+}
+
+.messageInput {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  background-color: var(--WHITE);
+  border-radius: 15px;
+  margin-right: 16px;
+
+  padding-left: 16px;
+  padding-right: 16px;
+  align-items: center;
+}
+
+.messageInput input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 17px;
+}
+
+.messageSendButton {
+  background-color: var(--BUTTON_BACKGROUND);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--WHITE);
+  cursor: pointer;
+  outline: none;
+}
+
+.conversation {
+  flex: 1;
+  overflow: auto;
+}
